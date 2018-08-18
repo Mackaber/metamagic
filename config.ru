@@ -9,7 +9,7 @@ app = Proc.new do |env|
     description = req['description']
     type = req['type']
 
-    summary_large_image = req['summary_large_image']
+    card = req['card']
     site = req['site']
     creator = req['creator']
 
@@ -20,7 +20,7 @@ app = Proc.new do |env|
                 <html>
                 <head>
                   <title>#{title}</title>
-                  <style type='text/css'>
+                  <style type='text/cssw'>
                     img {
                       margin: 0 auto;
                       max-height: 100%;
@@ -31,12 +31,14 @@ app = Proc.new do |env|
                   <meta property='og:type' content='#{type}'>
                   <meta property='og:image' content='#{url}'>
                   <meta property='og:url' content='#{url}'>
-                  <meta property='og:description' content='#{url}'>
-                  <meta name='twitter:card' content='#{summary_large_image}'>
+                  <meta property='og:description' content='#{description}'>
+                  <meta property='og:image:width' content='1280'>
+                  <meta property='og:image:height' content='501'>
+                  <meta name='twitter:card' content='#{card}'>
                   <meta name='twitter:site' content='#{site}'>
                   <meta name='twitter:creator' content='#{creator}'>
                   <meta name='twitter:title' content='#{title}'>
-                  <meta name='twitter:description' content='#{url}'>
+                  <meta name='twitter:description' content='#{description}'>
                   <meta name='twitter:image' content='#{url}''>
                 </head>
                 <body>

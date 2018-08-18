@@ -44,12 +44,12 @@ app = Proc.new do |env|
                 <body>
                 </body>
                   <script type='text/javascript'>
-                    //window.location='#{orgn}'
+                    window.location='#{orgn}'
                   </script>
                 </html>
                """
   else
-    response = "Usage... \n\nhttp://metamagic.mackaber.me/?url=http://example.com/some_image.png&origin=http://origin_website.com&title=some%20title&description=some%20description&type=some%20type"
+    response = "Usage... \n\nhttp://metamagic.mackaber.me/?url=http://example.com/some_image.png&orgn=http://origin_website.com&title=some%20title&description=some%20description&type=some%20type"
   end
 
   [200, { 'Content-Type' => 'text/html' }, [response]]

@@ -32,7 +32,6 @@ app = Proc.new do |env|
                   <meta property='og:image' content='#{url}'>
                   <meta property='og:url' content='#{url}'>
                   <meta property='og:description' content='#{url}'>
-                  <meta property='twitter:card' content='#{type}' charset='utf-8'>
                   <meta name='twitter:card' content='#{summary_large_image}'>
                   <meta name='twitter:site' content='#{site}'>
                   <meta name='twitter:creator' content='#{creator}'>

@@ -1,10 +1,10 @@
 app = Proc.new do |env|
   req = Rack::Request.new(env)
 
-  if req['url'] && req['origin']
+  if req['url'] && req['orgn']
 
     url = req['url']
-    origin = req['origin']
+    orgn = req['orgn']
     title = req['title']
     description = req['description']
     type = req['type']
@@ -44,7 +44,7 @@ app = Proc.new do |env|
                 <body>
                 </body>
                   <script type='text/javascript'>
-                    window.location='#{origin}'
+                    //window.location='#{orgn}'
                   </script>
                 </html>
                """

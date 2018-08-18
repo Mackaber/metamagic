@@ -9,6 +9,10 @@ app = Proc.new do |env|
     description = req['description']
     type = req['type']
 
+    summary_large_image = req['summary_large_image']
+    site = req['site']
+    creator = req['creator']
+
     puts "URL: #{url}"
 
     response = """
@@ -28,12 +32,18 @@ app = Proc.new do |env|
                   <meta property='og:image' content='#{url}'>
                   <meta property='og:url' content='#{url}'>
                   <meta property='og:description' content='#{url}'>
+                  <meta property='twitter:card' content='#{type}' charset='utf-8'>
+                  <meta name='twitter:card' content='#{summary_large_image}'>
+                  <meta name='twitter:site' content='#{site}'>
+                  <meta name='twitter:creator' content='#{creator}'>
+                  <meta name='twitter:title' content='#{title}'>
+                  <meta name='twitter:description' content='#{url}'>
+                  <meta name='twitter:image' content='#{url}''>
                 </head>
                 <body>
-                  <h1>Redirecting...</h1>
                 </body>
                   <script type='text/javascript'>
-                      window.location='#{origin}'
+                    window.location='#{origin}'
                   </script>
                 </html>
                """
